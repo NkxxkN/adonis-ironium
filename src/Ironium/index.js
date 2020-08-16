@@ -37,7 +37,7 @@ class Ironium {
       }
 
       for (const job of this.jobs) {
-        this._instance.queue(job.constructor.name).eachJob(job.handle)
+        this._instance.queue(job.constructor.name).eachJob(job.handle.bind(job))
       }
     }
   }
